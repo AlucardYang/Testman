@@ -4,7 +4,17 @@
 
 .right-content {
     float: right;
-    width: 68%;
-    height: 100%;
-    border: 1px solid #000;
+    width: calc(100% - 240px);
+    background-color: #fff;
 }
+
+.testman-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 500px;
+}
+
+.frameworks-content {
+    background-color: rgb(246, 246, 246);
+}
+

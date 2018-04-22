@@ -4,11 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'testCaseManage',
+    redirectTo: 'testcasemanage',
     pathMatch: 'full'
   },
   {
-    path: 'testCaseManage',
+    path: 'testcasemanage',
     loadChildren: './test-case-manage/testcasemanage.module#TestCaseManageModule'
   }
 ];
