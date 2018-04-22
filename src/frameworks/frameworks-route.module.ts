@@ -20,6 +20,6 @@ export const appRouteConfig: Routes = [
   ]
 })
 
-export class FrameworkRoutingModule {
+export class FrameworksRouteModule {
 
 }

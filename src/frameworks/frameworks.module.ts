@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from './shared/index';
 import { BrowserModule } from '@angular/platform-browser';
-import { FrameworkRoutingModule } from './framework-routing.module';
+import { FrameworksRouteModule } from './frameworks-route.module';
 
 import { HeaderNavModule } from '../app/shared/header-nav/headernav.module';
 import { LeftMenuModule } from '../app/shared/left-menu/leftmenu.module';
 
-import { FrameworkComponent } from './framework.component';
+import { FrameworkComponent } from './frameworks.component';
 import { TestManService } from '../app/shared/services/testman.service';
 import { APP_BASE_HREF } from '@angular/common';
 
@@ -14,7 +14,7 @@ import { APP_BASE_HREF } from '@angular/common';
   imports: [
     SharedModule.forRoot(),
     BrowserModule,
-    FrameworkRoutingModule,
+    FrameworksRouteModule,
     HeaderNavModule,
     LeftMenuModule,
   ],
@@ -32,4 +32,4 @@ import { APP_BASE_HREF } from '@angular/common';
     FrameworkComponent,
   ]
 })
-export class FrameworkModule { }
+export class FrameworksModule { }

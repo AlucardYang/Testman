@@ -1,40 +1,37 @@
 {
   "project": {
-    "version": "1.0.0-beta.28.3",
-    "name": "my-demo"
+    "version": "1.0.0",
+    "name": "Testman"
   },
-  "apps": [
-    {
-      "root": "src",
-      "outDir": "dist",
-      "assets": [
-        "framework/assets",
-        "favicon.ico"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.json",
-      "prefix": "app",
-      "styles": [
-        "framework/assets/css/styles.css"
-      ],
-      "scripts": [],
-      "environments": {
-        "source": "framework/environments/environment.ts",
-        "dev": "framework/environments/environment.ts",
-        "prod": "framework/environments/environment.prod.ts"
-      }
+  "apps": [{
+    "root": "src",
+    "outDir": "dist",
+    "assets": [
+      "frameworks/assets",
+      "favicon.ico"
+    ],
+    "index": "index.html",
+    "main": "main.ts",
+    "polyfills": "polyfills.ts",
+    "test": "test.ts",
+    "tsconfig": "tsconfig.json",
+    "prefix": "app",
+    "styles": [
+      "frameworks/assets/css/styles.css"
+    ],
+    "scripts": [],
+    "environments": {
+      "source": "frameworks/environments/environment.ts",
+      "dev": "frameworks/environments/environment.ts",
+      "prod": "frameworks/environments/environment.prod.ts"
     }
-  ],
+  }],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"
     }
   },
-  "lint": [
-    {
+  "lint": [{
       "files": "src/**/*.ts",
       "project": "src/tsconfig.json"
     },

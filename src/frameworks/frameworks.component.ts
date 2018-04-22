@@ -3,9 +3,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 @Component({
   moduleId: module.id,
   selector: 'app-root',
-  templateUrl: './framework.component.html',
+  templateUrl: './frameworks.component.html',
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./framework.component.scss']
+  styleUrls: ['./frameworks.component.scss']
 })
 export class FrameworkComponent implements OnInit {
   constructor() {
