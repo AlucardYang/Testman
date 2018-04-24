@@ -1,7 +1,7 @@
 <div>
   <header class="test-case-manage-header">
     <span class="display-inline-block">用例管理列表</span>
-    <button class="add-test-case-button pull-right" type="button">新增用例</button>
+    <button class="add-test-case-button pull-right" type="button" (click)="goAddcase()">新增用例</button>
     <div class="clear-both"></div>
   </header>
   <section class="test-case-manage-section">
@@ -62,8 +62,8 @@
         <span class="glyphicon glyphicon-search"></span>
       </a>
     </header>
-    <section>
-      <ul class="data-table">
+    <section class="test-case-table">
+      <!-- <ul class="data-table">
         <li class="data-table-header">
           <div class="data-table-header-num pull-left">
             <input type="checkbox">
@@ -130,7 +130,21 @@
             </a>
           </div>
         </li>
-      </ul>
+      </ul> -->
+      <p-dataTable [value]="testCases" selectionMode="multiple">
+        <p-column field="num" header="编号">
+          <!-- <ng-template let-col let-testCase="rowData" pTemplate="body">
+            <span [style.color]="testCase[col.field]">{{testCase[col.field]}}</span>
+          </ng-template> -->
+        </p-column>
+        <p-column field="testCaseName" header="用例名称"></p-column>
+        <p-column field="apiName" header="接口名称"></p-column>
+        <p-column field="state" header="用例状态"></p-column>
+        <p-column field="creator" header="创建人"></p-column>
+        <p-column field="updator" header="更新人"></p-column>
+        <p-column field="updateTime" header="更新时间"></p-column>
+        <p-column styleClass="col-button" header="操作"></p-column>
+      </p-dataTable>
     </section>
   </section>
 </div>

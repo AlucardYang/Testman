@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -14,13 +15,13 @@ export class TestCaseManageComponent implements OnInit {
   testTypes: Array<any> = ['冒烟测试', '功能测试', '回归测试', '预发布测试'];
   state: any = '全部';
   states: Array<any> = ['全部', '有效', '无效'];
-  testCaseList: Array<any> = [];
-  constructor() {
+  testCases: Array<any> = [];
+  constructor(private router: Router) {
 
   }
 
   ngOnInit() {
-    this.testCaseList = [
+    this.testCases = [
       {
         num: 1,
         testCaseName: '老用户登陆友邻市集',
@@ -63,5 +64,9 @@ export class TestCaseManageComponent implements OnInit {
 
   changeState(state) {
     this.state = state;
+  }
+
+  goAddcase() {
+    this.router.navigate(['/testman', 'addcase']);
   }
 }
