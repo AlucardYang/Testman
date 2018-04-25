@@ -124,7 +124,7 @@ export class AddCaseComponent implements OnInit {
     if (this.addCaseService.isJSON(json)) {
       json = JSON.parse(json);
       this.getJsonData(json, this.id, this.pid, this.layer);
-      console.log(this.jsons);
+      // console.log(this.jsons);
     } else {
       alert('不是json格式');
     }
@@ -137,7 +137,13 @@ export class AddCaseComponent implements OnInit {
       if (json['pid'] === tree['id']) {
         json['show'] = !json['show'];
       }
+      const treeId = String(tree['id']);
+      const jsonId = String(json['id']);
+      if (jsonId.slice(0, treeId.length) === treeId && (jsonId !== treeId)) {
+        json['show'] = tree['open'];
+      }
     }
+
   }
 
 }
