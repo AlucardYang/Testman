@@ -1,16 +1,24 @@
 <div class="add-case-content">
   <textarea class="add-tes-textarea" name="json" id="" cols="30" rows="10" [(ngModel)]="jsonStr"></textarea>
   <button class="add-test-case-button pull-right clear-both" type="button" (click)="getParam()">获取参数</button>
-  <table border="1" class="add-case-table">
-    <tr>
-      <th class="parameter-th">字段名称</th>
-      <th class="parameter-th">类型</th>
-      <th class="parameter-th">默认值</th>
-    </tr>
-    <tr *ngFor="let json of jsons">
-      <th class="parameter-td">{{json?.name}}</th>
-      <th class="parameter-td">{{json?.type}}</th>
-      <th class="parameter-td">{{json?.value}}</th>
-    </tr>
-  </table>
+  <div class="add-case-table">
+    <div class="table-row">
+      <div class="parameter-th col-lg-3">字段名称</div>
+      <div class="parameter-th col-lg-2">类型</div>
+      <div class="parameter-th col-lg-7">默认值</div>
+      <div class="clear-both"></div>
+    </div>
+    <div class="table-row" *ngFor="let json of jsons" [hidden]="!json?.show">
+      <div class="parameter-td col-lg-3 over-flow-ellipsis" [style.padding-left]="json?.layer*12+'px'" [title]="json?.name">
+        <a class="icon-wrapper expand-icon-position" [ngClass]="{'cursor-pointer': json?.isParent}" [style.left]="(json?.layer-1)*12+'px'"
+          (click)="openOrClose(json)">
+          <span *ngIf="json?.isParent" class="glyphicon" [ngClass]="{'glyphicon-chevron-down': !obj?.open, 'glyphicon-chevron-up': obj?.open}"></span>
+        </a>
+        <span>{{json?.name}}</span>
+      </div>
+      <div class="parameter-td col-lg-2 over-flow-ellipsis" [title]="json?.type">{{json?.type}}</div>
+      <div class="parameter-td col-lg-7 over-flow-ellipsis" [title]="json?.value">{{json?.value}}</div>
+      <div class="clear-both"></div>
+    </div>
+  </div>
 </div>
